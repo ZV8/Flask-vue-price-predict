@@ -1,0 +1,29 @@
+version: '3'
+services:
+  server-flask-dev:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: bash -c "python /server/run_server.py"
+    environment:
+      - FLASK_APP=run_server.py
+      - FLASK_DEBUG=True
+      - PYTHONUNBUFFERED=True
+    ports:
+      - 5000:5000
+    volumes:
+      - ./server:/server
+    container_name: server-flask-dev
+  client-vue-dev:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8080:8080
+    command: sh -c "npm run serve"
+    volumes:
+      - ./client:/client
+      - /client/node_modules
+    environment:
+      HOST: 0.0.0.0
+    container_name: web-vue-dev
