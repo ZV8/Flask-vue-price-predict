@@ -1,20 +1,21 @@
-# Developing a Single Page App with Flask and Vue.js
+# Курсовой проект "Машинное обучение в бизнесе"
 
-### Want to learn how to build this?
+### Разработка приложения для прогнозирования цены на аренду квартиры в Москве с использованием Flask, Vue.js, Docker-compose. 
 
-Check out the [post](https://testdriven.io/developing-a-single-page-app-with-flask-and-vuejs).
+Пример задеплоиного приложения [по ссылке](http://rental-price-prediction.adinweb.ru/).
 
-## Установка.
+## Установка через docker-compose.
 
-1. Запуск для разработки
+1. Запуск версии для разработки
 
     ```sh
    docker-compose -f docker-compose-dev.yml up --build
     ```
-   Navigate to [http://localhost:8080](http://localhost:8080)
+   После установки доступно по ссылке: [http://localhost:8080](http://localhost:8080) или [http://0.0.0.0:8080](http://localhost:8080)
+
 
 2. Запуск в продакшн
 
     ```sh
-   docker-compose -f docker-compose-prod.yml up --build
+   docker-compose -f docker-compose-prod.yml up --build -d
     ```
