@@ -1,0 +1,6 @@
+FROM node:lts-alpine
+COPY . /client
+WORKDIR /client
+COPY package*.json ./client
+RUN npm install
+EXPOSE 8080

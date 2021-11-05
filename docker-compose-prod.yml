@@ -1,0 +1,22 @@
+version: '3'
+services:
+  server-flask-prod:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: bash -c "python /server/run_server.py"
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - ./server:/server
+    container_name: server-flask-prod
+  client-vue-prod:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.prod
+    ports:
+      - 8181:80
+    environment:
+      HOST: 0.0.0.0
+    container_name: web-vue-prod
