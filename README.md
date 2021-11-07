@@ -3,7 +3,7 @@
 ### Разработка web-приложения с использованием rest api на базе Flask для применения модели машинного обучения в прогнозировании стоимости аренды квартиры в Москве.
 #### _Технологии: Flask, Vue.js, Docker-compose._ 
 
-![Прогнозирование стоимости аренды жилья в Москве](1.jpg)
+![Прогнозирование стоимости аренды жилья в Москве](prev.jpg)
 _Пример готового приложения [по ссылке](http://rental-price-prediction.adinweb.ru/)._
 
 ## Задачи проекта.
@@ -42,21 +42,19 @@ $ cd Flask-vue-price-predict
 ```sh
 $ docker-compose -f docker-compose-dev.yml up --build
 ```
-После установки будет доступно по ссылке: [http://localhost:8080](http://localhost:8080) или [http://0.0.0.0:8080](http://localhost:8080)
+После установки приложение будет доступно по ссылке: [http://localhost:8080](http://localhost:8080) или [http://0.0.0.0:8080](http://localhost:8080)
 
+API доступно по адресу: [http://localhost:5000](http://localhost:5000)
+
+GET - История предиктов на сервере: [http://localhost:5000/get-examples](http://localhost:5000/get-examples)
+
+POST - выполнить предикт для объекта: [http://localhost:5000/predict](http://localhost:5000/predict)
 
 ### ... если запуск **в прод**, то:
 
 ```sh
 $ docker-compose -f docker-compose-prod.yml up --build -d
 ```
-
-### API (Flask)
-доступно по адресу: [http://localhost:5000](http://localhost:5000)
-
-GET - История предиктов на сервере: [http://localhost:5000/get-examples](http://localhost:5000/get-examples)
-
-POST - выполнить предикт для объекта: [http://localhost:5000/predict](http://localhost:5000/predict)
 
 
 *********************************
